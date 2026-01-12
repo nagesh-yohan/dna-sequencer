@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagesh's DNA Sequencer | Professional Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-dna"></i>
+                <span>Nagesh's DNA Sequencer</span>
+            </div>
+            <h1>DNA to Protein Converter</h1>
+            <p class="subtitle">Translate nucleotide sequences into amino acid chains with precision.</p>
+        </header>
+
+        <main>
+            <div class="converter-card">
+                <div class="input-section">
+                    <div class="section-header">
+                        <label for="dnaInput"><i class="fa-solid fa-file-code"></i> Input DNA Sequence</label>
+                        <div class="actions">
+                            <button id="pasteBtn" class="icon-btn" title="Paste from Clipboard"><i
+                                    class="fa-regular fa-clipboard"></i> Paste</button>
+                            <button id="clearBtn" class="icon-btn delete-btn" title="Clear Input"><i
+                                    class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                    <textarea id="dnaInput" placeholder="Enter DNA sequence (e.g., ATGCGTACT...)"
+                        spellcheck="false"></textarea>
+                    <div class="input-meta">
+                        <span id="charCount">0 nucleotides</span>
+                        <span id="validationStatus" class="status-valid"><i class="fa-solid fa-check-circle"></i>
+                            Ready</span>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="convertBtn" class="primary-btn">
+                        <span>Translate Sequence</span>
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </button>
+                </div>
+
+                <div class="output-section">
+                    <div class="section-header">
+                        <label for="proteinOutput"><i class="fa-solid fa-vial"></i> Protein Sequence</label>
+                        <button id="copyBtn" class="secondary-btn"><i class="fa-regular fa-copy"></i> Copy
+                            Result</button>
+                    </div>
+                    <div class="output-wrapper">
+                        <textarea id="proteinOutput" readonly
+                            placeholder="Protein sequence will appear here..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3><i class="fa-solid fa-circle-info"></i> Guide</h3>
+                <ul>
+                    <li><strong>A, T, C, G</strong> are the only valid nucleotide characters.</li>
+                    <li>Non-coding characters (whitespaces, numbers) are automatically filtered.</li>
+                    <li>Translation uses the Standard Genetic Code.</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Nagesh's DNA Sequencer. Designed for Researchers.</p>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast hidden">
+        <i class="fa-solid fa-check"></i>
+        <span id="toastMsg">Copied to clipboard!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
